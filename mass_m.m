@@ -3,7 +3,6 @@ function M = mass_m(t, X, params, Sp)
 Calculates entire mass matrix that multiplies the time derivative of the 
 state vector in Eqn. 22. 
 %}
-
 N = params.N;
 Nbody = params.Nbody;
 Nfil = params.Nfil;

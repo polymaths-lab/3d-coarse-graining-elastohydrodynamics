@@ -1,4 +1,5 @@
-function B = calc_RHS(t,Xq,params)
+%Calculates RHS for each structure, using bending moment relation Eqn 8.
+function B = calc_RHS(t,Xq, Nfil, N, i)
 q0 = Xq(3+1:4:end-3);
 q1 = Xq(3+2:4:end-2);
 q2 = Xq(3+3:4:end-1);
@@ -8,18 +9,17 @@ d1 = [q0.*q0 + q1.*q1 - q2.*q2 - q3.*q3, 2*(q2.*q1 + q0.*q3), 2*(q3.*q1-q0.*q2)]
 d2 = [2*(q1.*q2-q0.*q3), q0.*q0-q1.*q1+q2.*q2-q3.*q3, 2*(q3.*q2+q0.*q1)];
 d3 = [2*(q1.*q3+q0.*q2), 2*(q2.*q3-q0.*q1), q0.*q0-q1.*q1-q2.*q2+q3.*q3];
 
-N = params.N;
 s = 1/N:1/N:1-1/N;
 
-N = params.N; n = params.n; Nfil = params.Nfil; Nbody = params.Nbody;
 B = zeros(3+3+3*N*Nfil,1);
 
 %Chlamydomonas preferred curvatures for planar swimming
-A = 1+1*sin(2*pi*s'-t);
-k2s = 4*[-A A];
+% A = 1+1*sin(2*pi*s'-t);
+% k2s = 4*[-A A];
 k2s = 0;
 
-for fil = 1:params.Nfil
+
+for fil = 1:Nfil
     d1f = d1(1+(fil-1)*(N)+1:1+fil*(N),:);
     d2f = d2(1+(fil-1)*(N)+1:1+fil*(N),:);
     d3f = d3(1+(fil-1)*(N)+1:1+fil*(N),:);

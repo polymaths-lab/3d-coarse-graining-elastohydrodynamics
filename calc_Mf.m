@@ -1,4 +1,5 @@
-%function Mf = calc_Mf(X, segment_positions_i, sphere_centres_i, N, n)
+%Calculates matrix that encodes the force and torque balance of entire
+%structure and sub-filaments. Eqn 9, 10
 function [A,B,C] = calc_Mf(X, Nbody, Nfil, N,b,n)
 %Find the matrix that relates forces and torques on every sphere within a
 %particular filament to the elastic forces and torques within the filament

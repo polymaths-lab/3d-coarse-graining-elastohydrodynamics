@@ -1,6 +1,5 @@
 %Calculate Q matrix that converts vector of angular velocities into vector
-%of velocities AND angular velocities
-% Q [w1, ..., wN] = [v1, w1, ..., vNn, wNn]
+%of velocities and angular velocities, Eqn 13.
 function Q = calc_Q(X, N,Nfil,Nbody, b,n)
 q0 = X(3+1:4:end-3);
 q1 = X(3+2:4:end-2);

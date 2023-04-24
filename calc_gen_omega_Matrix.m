@@ -1,3 +1,4 @@
+%Relates rate of change of generator r to angular velocity. (Eqn 18)
 function D = calc_gen_omega_Matrix(r)
 rmag = norm(r);
 cross_term = sinc(rmag/pi)^2 * [0 -r(3) r(2); r(3) 0 -r(1); -r(2) r(1) 0];

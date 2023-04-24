@@ -1,3 +1,5 @@
+%Calculates matrix relating rate of change of generator state vector for
+%structure to the angular velocity of segments. (Eqn 21).
 function D = calc_D(Xstruct, params, struct)
     N = params.N;
     Nfil = params.Nfil;
@@ -12,7 +14,7 @@ function D = calc_D(Xstruct, params, struct)
         M(i) = 3*N;
         for j = 1:N
             r = Xstruct(s+6+3*(j-1)+1:s+6+3*j);            
-            Qgen(s+6+3*(j-1)+1:s+6+3*j, s+6+3*(j-1)+1:s+6+3*j) = calc_gen_omega_Matrix(r);
+            D(s+6+3*(j-1)+1:s+6+3*j, s+6+3*(j-1)+1:s+6+3*j) = calc_gen_omega_Matrix(r);
         end
         s = s + M(i);
     end
