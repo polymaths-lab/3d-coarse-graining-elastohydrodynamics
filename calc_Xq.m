@@ -1,3 +1,4 @@
+%Input generator state vector X and return quaternion state vector Xq.
 function Xq = calc_Xq(X,params)
 N = params.N;
 Nfil = params.Nfil;
