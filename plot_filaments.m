@@ -53,7 +53,9 @@ for i = 1:Nstruct
         xx = [x(1+Nbody(i)+1*N*n*(j-1))-d3(1,1);x(1+1+Nbody(i)+1*N*n*(j-1):Nbody(i)+1*N*n*j-1); x(Nbody(i)+1*N*n*j) + d3(end,1)];
         yy = [y(1+Nbody(i)+1*N*n*(j-1))-d3(1,2);y(1+1+Nbody(i)+1*N*n*(j-1):Nbody(i)+1*N*n*j-1); y(Nbody(i)+1*N*n*j) + d3(end,2)];
         zz = [z(1+Nbody(i)+1*N*n*(j-1))-d3(1,3);z(1+1+Nbody(i)+1*N*n*(j-1):Nbody(i)+1*N*n*j-1); z(Nbody(i)+1*N*n*j) + d3(end,3)];
-
+        xx = interp1(linspace(0,1,length(xx))',xx,linspace(0,1,N)');
+        yy = interp1(linspace(0,1,length(yy))',yy,linspace(0,1,N)');
+        zz = interp1(linspace(0,1,length(zz))',zz,linspace(0,1,N)');
         %Plot lines on surface of tube to show twist
         for iii = 1:8
             a1 = as(iii);
@@ -65,4 +67,5 @@ for i = 1:Nstruct
     
     s = s + M(i);
 end
+axis equal
 end
