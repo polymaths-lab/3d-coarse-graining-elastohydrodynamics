@@ -7,12 +7,12 @@ a = params.a;
 b = params.b;
 Nbody = params.Nbody;
 Xq = X;
-h = [];
+
 if flag == 1
     Xq = calc_Xq(X,params);
 end
 
-%Get position of all spheres in system
+%Get position of all spheres in bodies
 X3 = [];
 s=0;
 for i = 1:Nstruct
@@ -30,10 +30,10 @@ j = 0;
 k = 0;
 for i = 1:length(X3)/3
     k = k + 1;
-    if k > Nbody(c)
+    if k > Nbody(c) %this calculates index needed for 'a'
         j = j + N*n*Nfil(c)+Nbody(c);
         c = c + 1;
-        k=1;
+        k=1;        
     end
     h(i) = surf(X3((i-1)*3+1)+a(j+k)*A,X3((i-1)*3+2)+a(j+k)*B,X3((i-1)*3+3)+a(j+k)*C);
     hold on
