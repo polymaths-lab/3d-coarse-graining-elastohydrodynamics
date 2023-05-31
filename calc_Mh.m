@@ -1,5 +1,5 @@
 %Calculate RPY matrix, relating forces and torques on all spheres to
-%linear and angluar velocities of all spheres. Eqn 11, and Appendix.
+%linear and angluar velocities of all spheres. Eqn 2.11, and Appendix.
 function Mh = calc_Mh(Ntot,X3f,a)
 
 Mh = zeros(6*Ntot, 6*Ntot);
