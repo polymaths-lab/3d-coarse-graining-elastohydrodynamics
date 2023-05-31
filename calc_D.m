@@ -1,5 +1,5 @@
 %Calculates matrix relating rate of change of generator state vector for
-%structure to the angular velocity of segments. (Eqn 21).
+%structure to the angular velocity of segments. (Eqn 2.21).
 function D = calc_D(Xstruct, params, struct)
     N = params.N;
     Nfil = params.Nfil;
