@@ -1,4 +1,4 @@
-%Calculates RHS for entire system, Eqn 22. 
+%Calculates RHS for entire system, Eqn 2.22. 
 function Btot = calc_Btot(t,X, params)
 Xq = calc_Xq(X,params);
 N = params.N;
