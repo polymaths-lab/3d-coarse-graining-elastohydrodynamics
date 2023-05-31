@@ -1,6 +1,7 @@
 %Calculates position of all spheres in structure with quaternion state
 %vector X. X contains the body position, body quaternion and quaternions
-%for all segments in all filaments.
+%for all segments in all filaments. Uses Eqn. 2.4 to calculate segment
+%endpoints. Calculates spheres on each segment.
 function X3 = calc_sphere_centres_full(X, Nbody, Nfil, N, b, n,params)
 X3 = zeros((Nbody+N(1)*n*Nfil)*3,1);
 a = 1/(2*N*n); %sphere separation
