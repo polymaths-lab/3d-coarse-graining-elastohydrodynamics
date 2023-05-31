@@ -1,9 +1,9 @@
 %Calculates matrix that encodes the force and torque balance of entire
-%structure and sub-filaments. Eqn 9, 10
+%structure and sub-filaments. Eqn 2.9, 2.10
 function [A,B,C] = calc_Mf(X, Nbody, Nfil, N,b,n)
 %Find the matrix that relates forces and torques on every sphere within a
 %particular filament to the elastic forces and torques within the filament
-%e.g. Mf * [F; T] = [0, 0, 0, \kappa11, \kappa12, \kappa13, ...]
+%e.g. Mf * [F; T] = [0, 0, 0, 0, 0, 0, \kappa11, \kappa12, \kappa13, ...]
 
 %Get quaternion elements
 q0 = X(3+1:4:end-3);
