@@ -1,7 +1,7 @@
 function M = mass_m(t, X, params, Sp)
 %{
 Calculates entire mass matrix that multiplies the time derivative of the 
-state vector in Eqn. 22. 
+state vector in Eqn. 2.22. 
 %}
 N = params.N;
 Nbody = params.Nbody;
@@ -78,6 +78,8 @@ for i = 1:Nstruct
     s = s + M(i);
 end
 
+%Calculate Hydrodynamic Matrix. Use MATLAB Coder app to create calc_Mh_mex
+%to speed this up.
 Mh = calc_Mh(Ntot,X3f,a');
 % Mh = calc_Mh_mex(Ntot,X3f,a');
 
