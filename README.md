@@ -2,6 +2,7 @@
 
 Code related to "The three-dimensional coarse-graining formulation of interacting elastohydrodynamic filaments and multi-body microhydrodynamics"
 
+Publication:
 https://royalsocietypublishing.org/doi/10.1098/rsif.2023.0021
 
 Running "main.m" will solve for a relaxing filament. 
