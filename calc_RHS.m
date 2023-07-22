@@ -1,4 +1,5 @@
 %Calculates RHS for each structure, using bending moment relation Eqn 2.8.
+%Add intrinsic curvatures for swimming or non-straight reference states
 function B = calc_RHS(t,Xq, Nfil, N, i)
 q0 = Xq(3+1:4:end-3);
 q1 = Xq(3+2:4:end-2);
@@ -22,10 +23,11 @@ for fil = 1:Nfil
     d1s=d1f(2:end,:)-d1f(1:end-1,:);
     d2s=d2f(2:end,:)-d2f(1:end-1,:);
     d3s=d3f(2:end,:)-d3f(1:end-1,:);
-    s = 1/N:1/N:1-1/N;
+    s = (1/N:1/N:1-1/N)';
 
+    %Add travelling wave of curvature in d2 direction
     prefk1 = 0;
-    prefk2 = 0;
+    prefk2 = 3*sin(2*pi*s-2*pi*t);
     prefk3 = 0;
 
     %Calculate curvatures in director basis
@@ -40,8 +42,6 @@ for fil = 1:Nfil
 
     eqns_s = 6+((fil-1)*N+2-1)*3+1:6+((fil-1)*N+2)*3;
     eqns_f = 6+((fil-1)*N+N-1)*3+1:6+((fil-1)*N+N)*3;
-
-    s = 1/(2*N):1/N:1-1/(2*N);
 
     %Place into RHS
     B(eqns_s(1):3:eqns_f(1)) = - kx;
