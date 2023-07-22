@@ -11,6 +11,9 @@ function [X,params] = get_params_relaxing_filament();
     
     %Position of filament base in body frame. 
     %xb = x1, separation between xb (body frame) and x1 (segment 1 frame) is zero
+    %If Nbody > 0, then params.b contains the positions of the Nbody spheres relative to xb, 
+    %and then the position of x1 relative to xb. So params.b contains a list of vectors 
+    %in the body frame.
     params.b = [0 0 0];
 
     
