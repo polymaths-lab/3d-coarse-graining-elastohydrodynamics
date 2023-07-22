@@ -109,7 +109,7 @@ for ti = 1:length(tps)
     X = traj(ti,:)';
     
     h = plot_filaments(X,params,1);
-    h2 = plot_bodies(X,params,1);
+    plot_bodies(X,params,1);
 
     title(sprintf('t = %.2f', tps(ti)));
     axis equal;
