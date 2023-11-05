@@ -5,7 +5,7 @@ Code related to "The three-dimensional coarse-graining formulation of interactin
 Publication:
 https://royalsocietypublishing.org/doi/10.1098/rsif.2023.0021
 
-Running "main.m" will solve for a relaxating filament that is also driven by a time-dependent intrinsic curvature. 
+Running "main.m" will solve for a relaxing filament that is also driven by a time-dependent intrinsic curvature. 
 
 Can edit "get_params_relaxing_filament.m" to change the filament parameters, for example the number of segments or sphere per segments.
 
