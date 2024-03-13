@@ -5,8 +5,10 @@
 
 %Get initial condition and simulation parameters.
 [X, params] = get_params_relaxing_filament();
+% [X, params] = get_params_chlamy();
 
 %Plot initial condition
+clf
 h = plot_filaments(X,params,1);
 if sum(params.Nbody > 0)
     h2 = plot_bodies(X,params,1);
@@ -14,6 +16,7 @@ if sum(params.Nbody > 0)
         h2(i).EdgeColor = 'none';
     end
 end
+light
 axis equal
 view(3)
 axis tight
