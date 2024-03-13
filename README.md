@@ -14,3 +14,9 @@ Can edit "calc_RHS.m" to change the chosen travelling wave of curvature, or chan
 "get_params_chlamy.m" gives initial condition and params for a toy Chlamydomonas. 
 
 "generate_calc_Mh_mex.m" generates MEX file calc_Mh_mex which can be used instead of calc_Mh to speed up mobility matrix calculation
+
+---
+
+Acknowledgements:
+
+Thanks to Philip Bayly and Alexis Rivera for pointing out a bug in calc_Q.m
