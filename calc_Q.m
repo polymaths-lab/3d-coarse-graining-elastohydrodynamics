@@ -9,10 +9,7 @@ q3 = X(3+4:4:end-0);
 d1 = [q0.*q0 + q1.*q1 - q2.*q2 - q3.*q3, 2*(q2.*q1 + q0.*q3), 2*(q3.*q1-q0.*q2)];
 d2 = [2*(q1.*q2-q0.*q3), q0.*q0-q1.*q1+q2.*q2-q3.*q3, 2*(q3.*q2+q0.*q1)];
 d3 = [2*(q1.*q3+q0.*q2), 2*(q2.*q3-q0.*q1), q0.*q0-q1.*q1-q2.*q2+q3.*q3];
-d1=load("d1.txt");
-d2=load("d2.txt");
-d3=load("d3.txt");
-% d3(3,1) = 400
+
 a = 1/(2*N*n);
 
 Q = zeros(6*(Nbody+(Nfil*N*n)), 6+3*N*Nfil);
