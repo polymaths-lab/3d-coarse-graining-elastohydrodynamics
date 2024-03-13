@@ -83,7 +83,10 @@ end
 Mh = calc_Mh(Ntot,X3f,a');
 % Mh = calc_Mh_mex(Ntot,X3f,a');
 
-M = Sp^4 * Mftot * inv(Mh) * Qtot * Dtot;
+% M = Sp^4 * Mftot * inv(Mh) * Qtot * Dtot;
+%don't need to explicitly calculate inverse, can do this instead which is a
+%bit faster:
+M = Sp^4 * Mftot * (Mh \ (Qtot*Dtot)); 
 
 %Rigidly attach the first segment in filaments to the body that the
 %filament is attached to. This results in the first segment and the body
